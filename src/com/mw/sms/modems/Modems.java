@@ -111,7 +111,8 @@ public class Modems {
 		String response = Utils.readAll(in);
 		if(!Utils.isResponseOk(response)) {
 			throw new ATDeviceDetectionException("Bad response to request for serial number: " + response);
-		} else {
+		} 
+		else{
 			String serial = Utils.trimResponse("AT+CGSN", response);
 			log.debug("Found serial (before stripping): " + serial);
 			if(this.serial != null) {
